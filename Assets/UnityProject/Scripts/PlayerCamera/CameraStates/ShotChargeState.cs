@@ -87,6 +87,15 @@ public class ShotChargeState : CameraState
         
         // Update ShotPowerUI
         m_Context.ShotPowerUI.SetFillAmount(((m_TimerHelper - INITIAL_DEBOUNCE_TIME) / MAXIMUM_CHARGE_TIME)); // TODO: Better helper function for this?
+        
+        // Orbit Camera around Target 
+        float percentageLookingDown = Mathf.Abs(CurrentRotationEulers.y) / UPPER_LOOKLIMIT_DEG;
+        m_CamTransform.position = (m_BallTransform.position) +
+                                  new Vector3(
+                                      Mathf.Cos(CurrentRotationEulers.x * Mathf.Deg2Rad) * Mathf.SmoothStep(m_CamRadiusFromTarget, m_CamRadiusFromTarget * 0.3f, percentageLookingDown),
+                                      Mathf.Sin(CurrentRotationEulers.y * Mathf.Deg2Rad) * Mathf.SmoothStep(0f, m_CamRadiusFromTarget, percentageLookingDown),
+                                      Mathf.Sin(CurrentRotationEulers.x * Mathf.Deg2Rad) * Mathf.SmoothStep(m_CamRadiusFromTarget, m_CamRadiusFromTarget * 0.3f, percentageLookingDown));
+        m_CamTransform.LookAt(m_BallTransform);
     }
 
     private float CalculatePower(float time)

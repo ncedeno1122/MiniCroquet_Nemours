@@ -7,6 +7,17 @@ public abstract class CameraState
 {
     #region Fields
 
+    public const float UPPER_LOOKLIMIT_DEG = 88f; // 90f causes snaps with transform.LookAt()
+    public const float LOWER_LOOKLIMIT_DEG = -15f;
+    public const float CAM_ORBIT_SPEED = 25f;
+    protected float m_CamRadiusFromTarget = 10f;
+
+    protected Vector2 CurrentRotationEulers
+    {
+        get => m_Context.CurrentRotationEulers;
+        set => m_Context.CurrentRotationEulers = value;
+    }
+
     protected PlayerCameraController m_Context;
     
     #endregion
