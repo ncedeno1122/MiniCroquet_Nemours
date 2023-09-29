@@ -23,7 +23,7 @@ public class ShotLineupState : CameraState
     public override void OnLookIA(InputAction.CallbackContext ctx)
     {
         // Set MouseDeltaVec2
-        if (ctx.performed & m_IsSecondaryButtonHeld)
+        if (ctx.performed && m_IsSecondaryButtonHeld)
         {
             m_MouseDeltaVec2 = ctx.ReadValue<Vector2>(); // TODO: Rid of field, use only as local var?
             CurrentRotationEulers += m_MouseDeltaVec2 * (-1f * (CAM_ORBIT_SPEED * Time.deltaTime));
@@ -66,6 +66,7 @@ public class ShotLineupState : CameraState
     {
         //
         m_Context.ShotPowerUI.Hide();
+        m_Context.ShotAngleUI.Hide();
     }
 
     public override void OnExit()

@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "4e9506e39648b192",
+    "type": "split",
+    "children": [
+      {
+        "id": "7ef6af0229865be7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3c8bc1717b85a9a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DevLogs/2023-09-28.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "16b47f67bb9bf446",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DevLogs/2023-09-28.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8f21d0d3a79608b2",
+    "type": "split",
+    "children": [
+      {
+        "id": "cf8287d71e001bb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "342eff58e3520b4e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "494586880eabb56f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ff5868460392e816",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "3351c21c88d9f3fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "aec7c4f48d592628",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "424477987f760aaa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "DevLogs/2023-09-28.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "55f229df1544daef",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "DevLogs/2023-09-28.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "091db42bbf751723",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a6a0093d55c1ea0b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "DevLogs/2023-09-28.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "16b47f67bb9bf446",
+  "lastOpenFiles": [
+    "Croquet Programming.md",
+    "Croquet Programming.md.meta",
+    "DevLogs/2023-09-28.md",
+    "DevLogs.meta",
+    "DevLogs/2023-09-28.md.meta",
+    "Design",
+    "DevLogs"
+  ]
+}

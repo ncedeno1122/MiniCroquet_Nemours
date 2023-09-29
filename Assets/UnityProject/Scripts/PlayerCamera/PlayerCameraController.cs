@@ -17,6 +17,7 @@ public class PlayerCameraController : MonoBehaviour
     public CameraState CamState { get; private set; }
 
     public ShotPowerUIController ShotPowerUI;
+    public ShotAngleUIController ShotAngleUI;
 
     #endregion
     

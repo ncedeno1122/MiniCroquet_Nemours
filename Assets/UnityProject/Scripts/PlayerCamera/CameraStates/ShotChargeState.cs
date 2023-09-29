@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 
 public class ShotChargeState : CameraState
 {
-    private bool m_WasSelectPressed; // Used to determine 
+    private bool m_WasSelectPressed;
     
     private float m_TimerHelper = 0f;
     private const float INITIAL_DEBOUNCE_TIME = 0.25f;
 
     private const float MAXIMUM_CHARGE_TIME = 2f;
+    
+    private Vector2 m_InitialMousePositionScreen = Vector2.zero;
         
     private readonly Transform m_CamTransform;
     private readonly Transform m_BallTransform;
@@ -21,16 +23,25 @@ public class ShotChargeState : CameraState
         m_BallTransform = ballTF;
     }
 
-    public override void OnLookIA(InputAction.CallbackContext ctx)
-    {
-        //
-    }
-
     public override void OnMainButtonIA(InputAction.CallbackContext ctx)
     {
         //
     }
-    
+
+    public override void OnLookIA(InputAction.CallbackContext ctx)
+    {
+        //
+        Vector2 v2Input = ctx.ReadValue<Vector2>();
+        Debug.Log($"Mouse input is {v2Input}");
+        // Update ShotAngleUI with m_InitialMousePositionScreen
+        if (ctx.performed)
+        {
+            
+            //m_InitialMousePositionScreen = (m_InitialMousePositionScreen + v2Input).normalized;
+            m_Context.ShotAngleUI.ShowAngle(m_InitialMousePositionScreen);
+        }
+    }
+
     public override void OnSecondaryButtonIA(InputAction.CallbackContext ctx)
     {
         //
@@ -40,12 +51,16 @@ public class ShotChargeState : CameraState
     {
         //
         m_Context.ShotPowerUI.Show();
+        m_Context.ShotAngleUI.Show();
+        
+        m_InitialMousePositionScreen = Vector2.zero; // TODO: Currently redundant
     }
 
     public override void OnExit()
     {
         //
         m_Context.ShotPowerUI.Hide();
+        m_Context.ShotAngleUI.Hide();
     }
 
     protected override void EarlyUpdate()
