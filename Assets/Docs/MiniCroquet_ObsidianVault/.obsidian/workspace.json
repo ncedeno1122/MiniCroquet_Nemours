@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3c8bc1717b85a9a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DevLogs/2023-09-28.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "16b47f67bb9bf446",
             "type": "leaf",
             "state": {
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "3351c21c88d9f3fe",
@@ -160,11 +146,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "16b47f67bb9bf446",
+  "active": "342eff58e3520b4e",
   "lastOpenFiles": [
     "Croquet Programming.md",
-    "Croquet Programming.md.meta",
     "DevLogs/2023-09-28.md",
+    "Croquet Programming.md.meta",
     "DevLogs.meta",
     "DevLogs/2023-09-28.md.meta",
     "Design",

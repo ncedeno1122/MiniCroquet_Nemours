@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WicketController : MonoBehaviour
+public class BallController : MonoBehaviour
 {
-    private BoxCollider m_Collider;
+    
 }

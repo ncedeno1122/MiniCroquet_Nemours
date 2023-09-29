@@ -24,7 +24,7 @@ Now, let's take a look at the scoring zones and possibilities with Wickets. In c
 - (int) WicketIndex
 - (bool) FromFront
 	- NOTE: Marking this is arbitrary, could be done with a projected light cookie and arrow locally to the "front" side of the wicket, but the differentiation is necessary.
-	*Wicket* Class:
+*Wicket* Class:
 	- (List<*WicketGate*>) WicketGates
 	
 	
