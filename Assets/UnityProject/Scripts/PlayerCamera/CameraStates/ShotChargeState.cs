@@ -85,8 +85,9 @@ public class ShotChargeState : CameraState
             
             Rigidbody rb = m_BallTransform.GetComponent<Rigidbody>();
             rb.AddForce(m_CamTransform.TransformDirection(Vector3.forward) * CalculatePower(m_TimerHelper));
-            
-            m_Context.ChangeState(new ShotLineupState(m_Context, m_BallTransform)); // TODO: Go to state to follow ball!
+
+            //m_Context.ChangeState(new ShotLineupState(m_Context, m_BallTransform)); // TODO: Go to state to follow ball!
+            m_Context.ChangeState(new WaitUntilBallStopsState(m_Context, m_BallTransform));
         }
     }
 

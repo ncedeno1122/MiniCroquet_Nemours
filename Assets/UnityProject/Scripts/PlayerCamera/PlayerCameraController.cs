@@ -14,10 +14,12 @@ public class PlayerCameraController : MonoBehaviour
     public InputAction LookIA, MainButtonIA, SecondaryButtonIA;
     public Vector2 CurrentRotationEulers = Vector2.zero;
 
-    public CameraState CamState { get; private set; }
+    public CameraState CamState;
 
     public ShotPowerUIController ShotPowerUI;
     public ShotAngleUIController ShotAngleUI;
+
+    public MatchManager MatchManager;
 
     #endregion
     
@@ -32,7 +34,7 @@ public class PlayerCameraController : MonoBehaviour
         
         // Set Initial State
         // TODO: RID OF THIS
-        CamState = new ShotLineupState(this, GameObject.Find("CroquetBall").transform);
+        //CamState = new ShotLineupState(this, GameObject.Find("CroquetBall_Blue").transform);
     }
 
     private void Update()
