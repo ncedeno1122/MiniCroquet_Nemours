@@ -28,6 +28,7 @@ public class MatchManager : MonoBehaviour
     // UI
     public WicketGoalPanelController WGPC;
     public WicketIndicatorController WicketIndicator;
+    public ScoreAnnouncementPanelController ScoreAnnouncement;
 
     private void Awake()
     {
@@ -109,8 +110,7 @@ public class MatchManager : MonoBehaviour
             if (CurrentWicketGate.ReceivesFromFront == fromFront)
             {
                 // TODO: Score! using the proper Player / Team from the BallController
-                Debug.Log($"Ball {bc.name} cleared WicketGate {CurrentWicketGate.WicketGateIndex} ({CurrentWicketGate}). Advancing to WicketGate #{CurrentWicketGate.WicketGateIndex + 1}!");
-                AdvanceWicket();
+                
                 // Score
                 if (((int) bc.BallColor) % 2 == 0)
                 {
@@ -120,6 +120,12 @@ public class MatchManager : MonoBehaviour
                 {
                     Team2Score++;
                 }
+
+                // UI
+                ScoreAnnouncement.TriggerAnimation();
+
+                Debug.Log($"Ball {bc.name} cleared WicketGate {CurrentWicketGate.WicketGateIndex} ({CurrentWicketGate}). Advancing to WicketGate #{CurrentWicketGate.WicketGateIndex + 1}!");
+                AdvanceWicket();
             }
         }   
     }
@@ -132,10 +138,11 @@ public class MatchManager : MonoBehaviour
     private void SetWicket(int index)
     {
         CurrentWicketGate = WicketGateOrder[index];
-        
+
         // UI
-        WGPC.Text.text = $"Wickets Cleared: ({CurrentWicketGate.WicketGateIndex}/{WicketGateOrder.Count})\n" +
-            $"Team 1: {Team1Score} | Team 2: {Team2Score}";
+        //WGPC.Text.text = $"Wickets Cleared: ({CurrentWicketGate.WicketGateIndex}/{WicketGateOrder.Count})\n" +
+        //    $"Team 1: {Team1Score} | Team 2: {Team2Score}";
+        WGPC.UpdateGoalPanelUI(Team1Score, Team2Score, CurrentWicketGate.WicketGateIndex, WicketGateOrder.Count);
         WicketIndicator.SetPosition(CurrentWicketGate);
     }
 

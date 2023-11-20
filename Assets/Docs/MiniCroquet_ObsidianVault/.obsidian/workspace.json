@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DevLogs/2023-09-28.md",
+                "file": "DevLogs/2023-10-09.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DevLogs/2023-09-28.md",
+                "file": "DevLogs/2023-10-09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DevLogs/2023-09-28.md",
+                "file": "DevLogs/2023-10-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevLogs/2023-09-28.md"
+                "file": "DevLogs/2023-10-09.md"
               }
             }
           }
@@ -146,10 +146,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "16b47f67bb9bf446",
+  "active": "342eff58e3520b4e",
   "lastOpenFiles": [
-    "Croquet Programming.md",
     "DevLogs/2023-09-28.md",
+    "DevLogs/2023-10-09.md",
+    "Croquet Programming.md",
     "Croquet Programming.md.meta",
     "DevLogs.meta",
     "DevLogs/2023-09-28.md.meta",

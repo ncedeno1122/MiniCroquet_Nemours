@@ -18,12 +18,15 @@ public class WicketController : MonoBehaviour
     [SerializeField] private List<BallController> m_BallsFromSouth = new();
     [SerializeField] private List<BallController> m_BallsFromNorth = new();
 
+    [SerializeField] private ParticleSystem m_CelebrationParticle;
+
     //public static UnityEvent<WicketController, BallController, bool> OnWicketControllerCleared;
     public static event Action<WicketController, BallController, bool> OnWicketCleared = delegate {  };
 
     private void Awake()
     {
         m_Collider = GetComponentInChildren<BoxCollider>();
+        m_CelebrationParticle = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnValidate()
@@ -54,18 +57,18 @@ public class WicketController : MonoBehaviour
             // Get BallController
             BallController bc = other.gameObject.GetComponent<BallController>();
             
-            Debug.Log($"Closest Point is {m_Collider.ClosestPointOnBounds(other.transform.position)}");
+            //Debug.Log($"Closest Point is {m_Collider.ClosestPointOnBounds(other.transform.position)}");
             
             if (IsPointInFrontOfCollider(bc.transform.position))
             {
                 // From North
-                Debug.Log($"Added Ball ({bc.name}) to FromNorth list!");
+                //Debug.Log($"Added Ball ({bc.name}) to FromNorth list!");
                 m_BallsFromNorth.Add(bc);
             }
             else if (!IsPointInFrontOfCollider(bc.transform.position))
             {
                 // From South
-                Debug.Log($"Added Ball ({bc.name}) to FromSouth list!");
+                //Debug.Log($"Added Ball ({bc.name}) to FromSouth list!");
                 m_BallsFromSouth.Add(bc);
             }
         }
@@ -86,11 +89,10 @@ public class WicketController : MonoBehaviour
                 if (m_BallsFromSouth.Contains(bc))
                 {
                     m_BallsFromSouth.Remove(bc);
-                    //OnWicketControllerCleared?.Invoke(this, bc, false);
-                    //OnWicketCleared.Invoke(this, bc, false);
-                    Debug.Log($"Trying to send {this}, {bc}, and {false}!");
+                    //Debug.Log($"Trying to send {this}, {bc}, and {false}!");
                     OnWicketCleared(this, bc, false);
                     Debug.Log($"Wicket True#{TrueWicketId} was cleared from Back to Front!");
+                    m_CelebrationParticle.Play();
                 }
 
                 m_BallsFromNorth.Remove(bc);
@@ -101,11 +103,10 @@ public class WicketController : MonoBehaviour
                 if (m_BallsFromNorth.Contains(bc))
                 {
                     m_BallsFromNorth.Remove(bc);
-                    //OnWicketControllerCleared?.Invoke(this, bc, true);
-                    //OnWicketCleared.Invoke(this, bc, true);
-                    Debug.Log($"Trying to send {this}, {bc}, and {true}!");
+                    //Debug.Log($"Trying to send {this}, {bc}, and {true}!");
                     OnWicketCleared(this, bc, true);
                     Debug.Log($"Wicket True#{TrueWicketId} was cleared from Front to Back!");
+                    m_CelebrationParticle.Play();
                 }
                 
                 m_BallsFromNorth.Remove(bc);
