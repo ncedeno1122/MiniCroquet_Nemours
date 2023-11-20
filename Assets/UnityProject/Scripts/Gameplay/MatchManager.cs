@@ -29,6 +29,7 @@ public class MatchManager : MonoBehaviour
     public WicketGoalPanelController WGPC;
     public WicketIndicatorController WicketIndicator;
     public ScoreAnnouncementPanelController ScoreAnnouncement;
+    public WinnerAnnouncementPanelController WinnerAnnouncement;
 
     private void Awake()
     {
@@ -119,6 +120,16 @@ public class MatchManager : MonoBehaviour
                 else
                 {
                     Team2Score++;
+                }
+
+                // Check if there's a winner
+                if (Team1Score >= 7)
+                {
+                    WinnerAnnouncement.ShowWinnerUI("Team 1");
+                }
+                else if (Team2Score >= 7)
+                {
+                    WinnerAnnouncement.ShowWinnerUI("Team 2");
                 }
 
                 // UI
